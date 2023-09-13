@@ -59,7 +59,7 @@
     </address>
     
     <!-- Using class send-column on the date so that the date is on the right side.-->
-    <br><p class="sender-column"> 20 January 2016</p> 
+    <br><p class="sender-column"> <time datetime="2016-01-20">20 January 2016</time></p> 
     
     <!-- Using the <address> tag again on the second address-->
     <address>
@@ -72,19 +72,24 @@
     <!-- Using <h1> tag on the RE: lines.-->
     <h1>Re: Eileen Dover university application</h1>
     
-    <p>Dear Eileen,
+    <p>Dear Eileen,</p>
     
-    Thank you for your recent application to join us at the University of Awesome's science faculty to study as part of your PhD next year. I will answer your questions one by one, in the following sections.
+      <!-- Using <abbr> tag to abbreviate PhD so that when reader hovers, it shows what PhD sgtands for. -->
+    <p>Thank you for your recent application to join us at the University of Awesome's science faculty to study as part of your 
+    <abbr title="Doctor of Philosophy">PhD</abbr> next year. I will answer your questions one by one, in the following sections.
     </p>
 
     <h2>Starting dates</h2>
     
     <p> We are happy to accommodate you starting your study with us at any time, however it would suit us better if you could start at the beginning of a semester; the start dates for each one are as follows: </p>
    
+
+    <!-- Using <ul> to put points in an unordered list -->
     <ul>
-        <li>First semester: 9 September 2016</li>
-        <li>Second semester: 15 January 2017</li>
-        <li>Third semester: 2 May 2017</li>
+      <!-- Wrapping all dates with the <time> tag  to make it machine readable. -->
+        <li>First semester: <time datetime="2016-09-9">9 September 2016</time></li>
+        <li>Second semester:<time datetime="2017-01-15">15 January 2017</time> </li>
+        <li>Third semester: <time datetime="2017-05-02">2 May 2017</time></li>
     </ul>
 
     <p>Please let me know if this is ok, and if so which start date you would prefer.</p>
@@ -99,10 +104,14 @@
     have on our team. Saying that, of the ideas you submitted we were most intrigued by are as follows, in order of priority:
     </p>
 
+    <!-- Using <ol> to put ponts on an ordered list, as well as using <sub> and 
+      <sup> to put certain numbers in a subscript or super script. Also,
+        using more <abbr> tags on HTML and CSS -->
     <ol>
-        <li>Turning H2O into wine, and the health benefits of Resveratrol (C14H12O3.)</li>
-        <li>Measuring the effect on performance of funk bassplayers at temperatures exceeding 30°C (86°F), when the audience size exponentially increases (effect of 3 × 103 increasing to 3 × 104.)</li> 
-        <li>HTML and CSS constructs for representing musical scores.</li>
+        <li>Turning H2O into wine, and the health benefits of Resveratrol (C<sub>14</sub>H<sub>12</sub>O<sub>3</sub>.)</li>
+        <li>Measuring the effect on performance of funk bassplayers at temperatures exceeding 30°C (86°F), when the audience size
+           exponentially increases (effect of 3 × 10<sup>3</sup> increasing to 3 × 10<sup>4</sup>.)</li> 
+        <li><abbr title="Hypertext Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> constructs for representing musical scores.</li>
     </ol>
 
     <p>So please can you provide more information on each of these subjects, including how long you'd expect the research to take, 
@@ -115,10 +124,11 @@
     dances are as follows, with definitions:
     </p>  
 
+    <!-- Using a <dl> tag to put points into a detailed list. <dd> is used to describe on of the <dt> tags. -->
     <dl>
     <dt>Polynesian chicken dance</dt>
 
-    <dd>A little known but very influential dance dating back as far as 300BC, a whole village would dance around in a 
+    <dd>A little known but very influential dance dating back as far as 300<abbr title="Before Christ">BC</abbr>, a whole village would dance around in a 
     circle like chickens, to encourage their livestock to be "fruitful".
     </dd>
 
@@ -134,18 +144,14 @@
      discovered a new dance style characterized by "robotic", stilted movements, being practiced by inhabitants of Northern
       Alaska and Canada. Later on however it was discovered that they were just moving like this because they were really cold.
     </dd>
+    </dl>
 
-    </dl>  
-
-
-    For more of my research, see my exotic dance research page. <br>
+    <p>For more of my research, see my exotic dance research page. <br> </p>
     
-
-
-    Yours sincerely,<br>
-    Dr Eleanor Gaye <br>
+   <p> Yours sincerely,<br> </p>
+   <p> Dr Eleanor Gaye <br></p>
     
-    University of Awesome motto: "Be awesome to each other." -- The memoirs of Bill S Preston, Esq
+    <p>University of Awesome motto: "Be awesome to each other." -- The memoirs of Bill S Preston, <abbr title="Esquire">Esq</abbr>
     </p>
     
 </body>

@@ -107,7 +107,7 @@
   <body>
     <header>
       <h1>Mozilla</h1>
-      <img src="firefox_logo-only_RGB120.png"/>
+      <img src="firefox_logo-only_RGB120.png" alt="Firefox">
       <!-- insert <img> element, link to the small
           version of the Firefox logo -->
 
@@ -116,7 +116,7 @@
     <main>
       <article>
         <!-- insert iframe from youtube -->
-        <iframe width="400" src="https://www.youtube.com/watch?v=ojcNcvb1olg"></iframe>
+        <iframe width="400" src="https://www.youtube.com/watch?v=ojcNcvb1olg" ></iframe>
         <h2>Rocking the free web</h2>
 
         <p>Mozilla are a global community of technologists, thinkers, and builders, working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
@@ -130,16 +130,15 @@
           <img
           src="firefox_logo-only_RGB400.png"
           alt="Download Firefox"
-          srcset="firefox_logo-only_RGB120.png 120w, firefox_logo-only_RGB400.png, 400w"   
-          size="(max-width 500px) 120px, 400px"
+          srcset="firefox_logo-only_RGB120.png 120w, firefox_logo-only_RGB400.png 400w"   
+          sizes="(max-width: 500px) 120px, 400px"
           >
         </a>
         <a href="https://www.mozilla.org/">
           <img
-          src="mozilla-dinosaur-head400.png"
-          alt="Mozilla Website"
+          src="mozilla-dinosaur-head400.png" alt="Mozilla Website"
           srcset="mozilla-dinosaur-head400.png 400w, mozilla-dinosaur-head120.png 120w"
-          size="(max-width 500px) 120 px, 400px"
+          sizes="(max-width: 500px) 120px, 400px"
           >
         </a>
         <a href="https://addons.mozilla.org/">
@@ -147,7 +146,7 @@
           src="firefox-addons400.jpg"
           alt="Firefox Addons"
           srcset="firefox-addons400.jpg 400w, firefox-addons120.jpg 120w"
-          size="(max-width 500px) 120 px, 400px"
+          sizes="(max-width: 500px) 120px, 400px"
           >
         </a>
         <a href="https://developer.mozilla.org/en-US/">
@@ -161,6 +160,10 @@
 
       <div class="red-panda">
         <!-- insert picture element -->
+        <picture>
+          <source srcset="red-panda600.jpg" media="(max-width: 600px)">
+          <img src="red-panda1200.jpg" alt="A Red Panda">
+        </picture>
       </div>
 
     </main>

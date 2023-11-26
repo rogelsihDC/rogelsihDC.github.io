@@ -43,18 +43,26 @@ imageFiles.forEach((filename,index) => {
       });
 });
 /* Wiring up the Darken/Lighten button */
-// declare a boolean to let the web page know if the picture is darkened or not
-let picDarken = false;
+// EVENT LISTENER to change the darken button when clicked
 btn.addEventListener('click', function () {
-    // if the picDarken boolean is false when the button is clicked,
-    // this will darken the picture and will change the boolean to true
-  if (!picDarken) {
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    picDarken = true;
-    // else if the picdarken is true and the button is clicked,
-    // this will brighten the picture and set picDarken to false
-  } else {
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-    picDarken = false;
-  }
-});
+    // get what attribute is given by the button in the 'class'
+    let btnAttribute = btn.getAttribute('class');
+  
+    // if what the button has is dark
+    if (btnAttribute === 'dark') {
+      // change the class to light
+      btn.setAttribute('class', 'light');
+      // change the text attribute of the button
+      btn.textContent = 'Lighten';
+      // darken the picture
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    // iff what the button has is light
+    } else {
+      // then change class back to dark
+      btn.setAttribute('class', 'dark');
+      // change the text content of the button
+      btn.textContent = 'Darken';
+      // return it back to normal
+      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    }
+  });

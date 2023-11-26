@@ -113,16 +113,20 @@ class Ball extends Shape {
    window.addEventListener("keydown", (e) => {
       switch (e.key) {
         case "a":
+         // subtract value of x to go left
           this.x -= this.velX;
           break;
+         // add value of x to go right
         case "d":
           this.x += this.velX;
           break;
+         // add value y to go up
         case "w":
-          this.y -= this.velY;
-          break;
-        case "s":
           this.y += this.velY;
+          break;
+         // subtract value y to go down
+        case "s":
+          this.y -= this.velY;
           break;
       }
     });

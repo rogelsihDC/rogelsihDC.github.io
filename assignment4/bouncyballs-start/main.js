@@ -102,16 +102,16 @@ balls.push(ball);
 
 // loop the animation of each ball
 function loop() {
-ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-ctx.fillRect(0, 0, width, height);
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillRect(0, 0, width, height);
 
-for (const ball of balls) {
-  ball.draw();
-  ball.update();
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+    ball.collisionDetect();
+  }
+
+  requestAnimationFrame(loop);
 }
-
-requestAnimationFrame(loop);
-}
-
 // calls loop function
 loop();

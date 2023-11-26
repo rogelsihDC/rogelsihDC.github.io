@@ -1,3 +1,12 @@
+
+// Rogel Sih
+// Assignment 4b - Image Gallery
+// INFT1206 - Web Development Fundamentals
+// We are given html of a gallery of photos, we have to write a script so that when an image is clicked,
+// it is made bigger and the focus of the webpage while having a gallery at the bottom of all the other
+// pictures.
+
+
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -24,6 +33,14 @@ imageFiles.forEach((filename,index) => {
     // index + 1 because indexes start at 0
     newImage.setAttribute('alt', altText[`pic${index+1}`]);
     thumbBar.appendChild(newImage);
+
+    // EVENT LISTENER so that when a picture is clicked, then the displayed image is changed to what was clicked
+    newImage.addEventListener('click', function () {
+        // set what was the image and the alt of the picture that was clicked
+        // onto the displayedImage
+        displayedImage.setAttribute('src', `images/${filename}`);
+        displayedImage.setAttribute('alt', altText[`pic${index + 1}`]);
+      });
 });
 /* Wiring up the Darken/Lighten button */
 // declare a boolean to let the web page know if the picture is darkened or not

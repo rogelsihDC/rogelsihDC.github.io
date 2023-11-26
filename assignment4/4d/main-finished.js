@@ -99,6 +99,44 @@ class Ball extends Shape {
      this.exists = true;
    }
  }
+// EVIL CIRCLE CLASS!
+ class EvilCircle extends Shape {
+   constructor(x, y) {
+     // hard coded values
+     super(x, y, 20, 20);
+     this.color = 'white';
+     this.size = 10;
+   }
+
+   // used to control the evil circle using the WASD keys
+   ControlCircle() {
+   window.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "a":
+          this.x -= this.velX;
+          break;
+        case "d":
+          this.x += this.velX;
+          break;
+        case "w":
+          this.y -= this.velY;
+          break;
+        case "s":
+          this.y += this.velY;
+          break;
+      }
+    });
+   }
+   // Draw the evil circle 
+   // use strokeStyle and stroke because we dont want the evil circle to be filled
+   draw(ctx) {
+      ctx.beginPath();
+      ctx.strokeStyle = this.color;
+      ctx.lineWidth = 3; // Thicker line
+      ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+      ctx.stroke(); // Stroke instead of fill
+    }
+ }
 
 const balls = [];
 

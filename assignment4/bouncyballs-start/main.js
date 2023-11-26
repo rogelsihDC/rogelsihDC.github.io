@@ -22,6 +22,7 @@ function randomRGB() {
 
 // Ball class
 class Ball {
+  // constructor of the class
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
     this.y = y;
@@ -59,6 +60,8 @@ class Ball {
     this.y += this.velY;
   }
 
+  // checks if any of the balls had collided with each other
+  // if they did, change the color ofboth balls to a random one
   collisionDetect() {
     for (const ball of balls) {
       if (this !== ball) {
@@ -75,8 +78,11 @@ class Ball {
 
 }
 
+// delclare instance of our ball object
 const balls = [];
 
+// this will loop creating balls that bounce around the screen
+// until there are 25 balls in which the loop will end
 while (balls.length < 25) {
 const size = random(10, 20);
 const ball = new Ball(
@@ -90,9 +96,11 @@ const ball = new Ball(
   size,
 );
 
+// push the ball onto the screen
 balls.push(ball);
 }
 
+// loop the animation of each ball
 function loop() {
 ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
 ctx.fillRect(0, 0, width, height);
@@ -105,4 +113,5 @@ for (const ball of balls) {
 requestAnimationFrame(loop);
 }
 
+// calls loop function
 loop();

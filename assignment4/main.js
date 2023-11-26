@@ -4,6 +4,10 @@
 // An HTML file to demostrate what we have learned in JavaScript.
 // There is a button, where if you click, it will generate a random silly story from the text file
 
+const customName = document.getElementById('customName');
+const randomize = document.querySelector('.randomize');
+const story = document.querySelector('.story');
+
 // STORY TEMPLATE
 const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
@@ -33,6 +37,12 @@ const insertZ =
 
 // EVENT LISTENER
 randomize.addEventListener('click', generateStory);
+
+// Function to randomly choose one of the choices in the array
+function randomValueFromArray(array) {
+    const random = Math.floor(Math.random() * array.length);
+    return array[random];
+  }
 
 // FUNCTION TO CHANGE THE STORY
 function generateStory() {

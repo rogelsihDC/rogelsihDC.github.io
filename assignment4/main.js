@@ -4,7 +4,7 @@
 // An HTML file to demostrate what we have learned in JavaScript.
 // There is a button, where if you click, it will generate a random silly story from the text file
 
-const customName = document.getElementById('customName');
+const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
@@ -49,9 +49,9 @@ function generateStory() {
     let storyOutput = storyText;
 
     // Check if customName has a value in it
-    if (customName.value !== '') {
+    if (customname.value !== '') {
         // if it does, change bob to the name in the textbox
-        const NAME = customName.value;
+        const NAME = customname.value;
         storyOutput = storyOutput.replaceAll('Bob', NAME);
     }
  
@@ -63,8 +63,8 @@ function generateStory() {
         const weightToKg = Math.round((300 * 0.45359237));
 
         // Replace with new numbers
-        storyOutput = storyOutput.replaceAll('94 farenheit', '${tempToCelsius} celsius');
-        storyOutput = storyOutput.replaceAll('300 pounds', '${weightToKg} kg');
+        storyOutput = storyOutput.replaceAll('94 fahrenheit', `${tempToCelsius} degrees celsius`);
+        storyOutput = storyOutput.replaceAll('300 pounds', `${weightToKg} kg`);
     }
 
     // Randomly choose one of the 3 choices in each array
